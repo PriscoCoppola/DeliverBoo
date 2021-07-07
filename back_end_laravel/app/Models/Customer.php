@@ -10,4 +10,18 @@ class Customer extends Model
     use HasFactory;
 
     protected $table = 'customers';
+
+    protected $fillable = [
+        'name',
+        'surname',
+        'address',
+        'zip_code',
+        'city',
+        'email',
+        'phone',
+    ];
+
+    public function order(){
+        return $this->belongsTo('App\Models\Order');
+    }
 }

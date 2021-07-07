@@ -22,4 +22,8 @@ class Order extends Model
     public function payment(){
         return $this->hasOne('App\Models\Payment');
     }
+
+    public function customers(){
+        return $this->belongsToMany('App\Models\Customer');
+    }
 }
