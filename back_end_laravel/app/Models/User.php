@@ -30,6 +30,8 @@ class User extends Authenticatable
         'vat'
     ];
 
+    protected $table = 'users';
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -51,17 +53,31 @@ class User extends Authenticatable
 
 
     public function galleries(){
-        return $this->belongsTo(Gallery::class);
+        return $this->belongsTo('App\Models\Gallery');
     }
     
 
-    // public function types(){
-    //     return $this->belongsToMany('App\Models\Type');
-    // }
+    public function types(){
+        return $this->belongsToMany('App\Models\Type');
+    }
+
+
+    public function foods(){
+        return $this->hasMany('App\Models\Food');
+    }
+
+    public function drinks(){
+        return $this->hasMany('App\Models\Drink');
+    }
+
+    public function souces(){
+        return $this->hasMany('App\Models\Souce');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Models\Order');
+    }
+
 }
 
-// class User extends Model{
-//     public function galleries(){
-//         return $this->belongsTo(Gallery::class);
-//     }
-// }
+

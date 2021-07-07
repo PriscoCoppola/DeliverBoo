@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class Drink extends Model
 {
     use HasFactory;
 
-    protected $table = 'types';
-
-    public function users(){
-        return $this->belongsToMany('App\Models\User');
-    }
+    protected $table = 'drinks';
 
     protected $fillable = [
-        'type',
+        'name',
         'slug',
+        'price'
     ];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

@@ -16,7 +16,7 @@ class UpdateUsersTable extends Migration
         //
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('gallery_id')->nullable()->after('id');
-            $table->foreign('gallery_id')->reference('id')
+            $table->foreign('gallery_id')->references('id')
             ->on('galleries')
             ->onDelete('set null');
         });
