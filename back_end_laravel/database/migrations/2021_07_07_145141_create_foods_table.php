@@ -15,10 +15,10 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('slug');
+            $table->string('title', 100);
+            $table->string('slug', 150);
             $table->float('price',5, 2)->unsigned();
-
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
 

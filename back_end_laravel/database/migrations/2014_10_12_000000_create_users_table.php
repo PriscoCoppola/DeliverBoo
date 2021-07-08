@@ -20,9 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('address');
-            $table->string('zip_code');
-            $table->string('city');
-            $table->string('vat');
+            $table->string('zip_code', 10);
+            $table->string('city', 50);
+            $table->string('vat', 20);
+            $table->string('cf', 20)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

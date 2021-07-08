@@ -27,7 +27,8 @@ class User extends Authenticatable
         'address',
         'zip_code',
         'city',
-        'vat'
+        'vat',
+        'cf'
     ];
 
     protected $table = 'users';

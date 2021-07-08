@@ -12,9 +12,10 @@ class Food extends Model
     protected $table = 'foods';
 
     protected $fillable = [
-        'name',
+        'title',
         'slug',
-        'price'
+        'price',
+        'description',
     ];
 
     public function user(){

@@ -16,8 +16,8 @@ class CreateSoucesTable extends Migration
         Schema::create('souces', function (Blueprint $table) {
             $table->id();
             
-            $table->string('name');
-            $table->string('slug');
+            $table->string('name', 50);
+            $table->string('slug', 100);
             $table->float('price',3, 2)->unsigned();
 
             $table->unsignedBigInteger('user_id')->nullable();
